@@ -9,14 +9,35 @@
 Answer the following questions:
 
 - What information can you read from the first line of the **request**? 
+  GET method, the URL, HTTP version
 - What is the method of this **request**?
+  GET
+
 - How do we call the other lines belongs to the **request**, e.g.: `User-Agent: vscode-restclient`
+  HEADERS
+
 - What information can be read from the first line of the **response**?
+  HTTP/1.1, 200 status code, OK
+
 - What does the `Content-Length` and `Content-Type` headers represent in the response?
+
+  The **Content-Length** header indicates the size of the message body, in bytes, sent to the recipient.
+
+  **Content-Type** header informs the client about the media type of the returned data.
+
 - How do we separate the headers from the body?
+  With 1 empty line
+
 - What does the body contains?
+  HTML document
+
+  The requested information in the format specified by the Accept field in the request header
+
 - How do we know on which server should we locate to fulfill the request?
+  first line URL
+
 - How does the server know which **resource** it should serve?
+  The resource is identified by the path and query parameters in the URL.
 
 ### Background materials
 
@@ -38,9 +59,13 @@ Deep dive:
 Answer the following questions.
 
 - What is the Status Code of the response?
+  200 OK
 - What do you see in the body?
+  JSON file
 - How do we now what is the "format" of the body?
+  Content- type
 - Can you create a new HTTP request to get the image of the character?
+  GET and the img URL
 
 ### Background materials
 
@@ -78,10 +103,18 @@ Fun:
 Answer the following questions:
 
 - What is the difference between the request body and the response body?
+  req body contain a json what we send and in the response json but with ID
+
 - What is happening, if you miss the content type header?
+  415 Unsupported Media Type
+
 - What is happening, if you send a malformed JSON?
+
 - What is happening, if you send correctly formed JSON but, its values are invalid (e.g. the kind is "spider" or the name is an empty string)?
+  400 Bad Request
+
 - Why it is not needed to send a `Content-Type` header for the GET requests?
+  Because we dont send body
 
 ### Background materials
 
